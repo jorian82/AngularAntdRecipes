@@ -1,0 +1,18 @@
+<li nz-list-item routerLinkActive="active" class="item-container-link" routerLink="{{ index }}">
+  <nz-list-item-meta>
+    <nz-list-item-meta-title>
+      {{ details.name }}
+    </nz-list-item-meta-title>
+    <nz-list-item-meta-description>
+      {{ details.description }}
+    </nz-list-item-meta-description>
+  </nz-list-item-meta>
+  <ul nz-list-item-actions>
+    <nz-list-item-action><i nz-icon nzType="tag" nzTheme="outline"></i> {{ details.difficulty }}</nz-list-item-action>
+    <nz-list-item-action><i nz-icon nzType="user" nzTheme="outline"></i> {{ details.servings }}</nz-list-item-action>
+    <nz-list-item-action><i nz-icon nzType="field-time" nzTheme="outline"></i> {{ details.preparationTime }}</nz-list-item-action>
+  </ul>
+  <nz-list-item-extra>
+    <img class="img-responsive" style="max-height: 90px" alt="{{details.name}}" [src]="details.imagePath" />
+  </nz-list-item-extra>
+</li>

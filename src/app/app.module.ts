@@ -14,14 +14,22 @@ import * as AllIcons from '@ant-design/icons-angular/icons';
 import { NZ_ICONS } from 'ng-zorro-antd/icon';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
-import { AppHeaderComponent } from './navigation/app-header/app-header.component';
-import { AppFooterComponent } from './navigation/app-footer/app-footer.component';
-import { PageNotFoundComponent } from './navigation/page-not-found/page-not-found.component';
+import { AppHeaderComponent } from './components/navigation/app-header/app-header.component';
+import { AppFooterComponent } from './components/navigation/app-footer/app-footer.component';
+import { PageNotFoundComponent } from './components/navigation/page-not-found/page-not-found.component';
 
-import { WelcomeComponent } from './welcome/welcome.component';
-import { RecipesBookComponent } from './recipes-book/recipes-book.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
+import { RecipesBookComponent } from './components/recipes-book/recipes-book.component';
+import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
 import { AppRoutingModule } from './app-routing.module';
+import { RecipesListComponent } from './components/recipes-book/recipes-list/recipes-list.component';
+import { RecipeItemComponent } from './components/recipes-book/recipes-list/recipe-item/recipe-item.component';
+import { RecipeDetailsComponent } from './components/recipes-book/recipe-details/recipe-details.component';
+import { ShoppingListService } from './services/shopping-list.service';
+import { RecipeStartComponent } from './components/recipes-book/recipe-start/recipe-start.component';
+import { RecipeEditComponent } from './components/recipes-book/recipe-edit/recipe-edit.component';
+import { IngredientsListComponent } from './components/shared/ingredients-list/ingredients-list.component';
+import { ShoppingEditComponent } from './components/shopping-list/shopping-edit/shopping-edit.component';
 
 registerLocaleData(en);
 
@@ -38,7 +46,14 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     WelcomeComponent,
     RecipesBookComponent,
     ShoppingListComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    RecipesListComponent,
+    RecipeItemComponent,
+    RecipeDetailsComponent,
+    RecipeStartComponent,
+    RecipeEditComponent,
+    IngredientsListComponent,
+    ShoppingEditComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +63,7 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     AntdDecoratorsModule,
     AppRoutingModule
   ],
-  providers: [ { provide: NZ_I18N, useValue: en_US }, { provide: NZ_ICONS, useValue: icons } ],
+  providers: [ ShoppingListService, { provide: NZ_I18N, useValue: en_US }, { provide: NZ_ICONS, useValue: icons } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

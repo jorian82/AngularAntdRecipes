@@ -1,0 +1,37 @@
+<div class="recipe-details-wrapper">
+  <nz-card style="width: 100%;" [nzTitle]="recipeTitle" [nzExtra]="actionsMenu">
+  <img [src]="recipe.imagePath" alt="" class="img-responsive"/>
+  </nz-card>
+  <nz-tabset nzSize="large">
+    <nz-tab nzTitle="Ingredients">
+      <app-ingredients-list [content]="recipe.ingredients"></app-ingredients-list>
+    </nz-tab>
+    <nz-tab nzTitle="Process">
+      {{ recipe.process }}
+    </nz-tab>
+    <nz-tab nzTitle="More">
+      Difficulty: {{ recipe.difficulty }}<br>
+      Servings: {{ recipe.servings }}<br>
+      Preparation Time: {{ recipe.preparationTime }}<br>
+      Origin: {{ recipe.origin }}
+    </nz-tab>
+  </nz-tabset>
+
+  <ng-template #recipeTitle>
+    <h1>{{ recipe.name }}</h1>
+  </ng-template>
+
+  <ng-template #actionsMenu>
+    <button nz-button [nzSize]="'large'" nzShape="round" nzType="primary" class="danger" nz-dropdown [nzDropdownMenu]="menu">
+      Manage Recipe
+      <i nz-icon nzType="down" nzTheme="outline"></i>
+    </button>
+    <nz-dropdown-menu #menu="nzDropdownMenu">
+      <ul nz-menu>
+        <li nz-menu-item (click)="goToShoppingList()">To shopping list</li>
+        <li nz-menu-item routerLink="edit">Edit recipe</li>
+        <li nz-menu-item>Delete recipe</li>
+      </ul>
+    </nz-dropdown-menu>
+  </ng-template>
+</div>

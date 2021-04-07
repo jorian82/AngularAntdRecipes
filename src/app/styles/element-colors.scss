@@ -1,0 +1,12 @@
+$primary-color: #337ab7;
+$danger-color: #b11616;
+$success-color: #2a860e;
+$active-color: #337ab7;
+
+.danger { background: $danger-color; border-color: $danger-color; }
+
+.success { background: $success-color; border-color: $success-color; }
+
+.primary { background: $primary-color; border-color: $primary-color; }
+
+.active { background: $active-color; border-color: $active-color; }

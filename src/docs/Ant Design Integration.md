@@ -1,4 +1,4 @@
-# Including Antd Design components
+# Antd Design Integration
 
 After creating the app, navigate to the app folder and add the components using the
 ```

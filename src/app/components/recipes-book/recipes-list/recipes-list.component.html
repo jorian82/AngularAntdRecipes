@@ -1,0 +1,21 @@
+<div nz-row>
+  <div nz-col nzSpan="12" nzOffset="6">
+    <button nz-button
+        routerLink="new"
+        nzType="primary"
+        [nzSize]="'large'"
+        nzShape="round"
+        class="full-width-button success">
+      New Recipe
+    </button>
+  </div>
+</div>
+<div nz-row>
+  <div nz-col nzSpan="24">
+    <ul nz-list nzItemLayout="vertical">
+      <h2 nz-list-header>Recipes list</h2>
+      <app-recipe-item *ngFor="let recipe of recipes; let i = index" [details]="recipe" [index]="i"></app-recipe-item>
+      <nz-list-footer>Total: {{ recipes.length }}</nz-list-footer>
+    </ul>
+  </div>
+</div>

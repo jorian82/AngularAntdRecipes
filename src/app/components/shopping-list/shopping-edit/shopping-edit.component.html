@@ -1,0 +1,41 @@
+<div nz-row>
+  <div nz-col nzSpan="11">
+    Ingredient:
+    <input nz-input placeholder="Ingredient" id="ingredient" #nameInput />
+  </div>
+  <div nz-col nzSpan="11" nzOffset="1">
+    Amount:
+    <input nz-input placeholder="Amount" id="amount" #amountInput />
+  </div>
+</div>
+<div nz-row>
+  <div nz-col nzSpan="7">
+    <button
+          nz-button
+          nzType="primary"
+          [nzSize]="'large'"
+          nzShape="round"
+          class="full-width-button success"
+          (click)="addIngredient(nameInput)">
+          Add
+    </button>
+  </div>
+  <div nz-col nzSpan="7" nzOffset="1">
+    <button nz-button
+            nzType="primary"
+            [nzSize]="'large'"
+            nzShape="round"
+            class="full-width-button danger">
+            Delete
+    </button>
+  </div>
+  <div nz-col nzSpan="7" nzOffset="1">
+    <button nz-button
+            nzType="primary"
+            [nzSize]="'large'"
+            nzShape="round"
+            class="full-width-button primary">
+            Clear
+    </button>
+  </div>
+</div>

@@ -1,5 +1,6 @@
 .layout {
   min-height: 100vh;
+  z-index: 10000;
 }
 
 .logo {
@@ -12,7 +13,8 @@
 }
 
 nz-header {
-  position: fixed;
+  /*position: fixed;*/
+  position: relative;
   width: 100%;
 }
 
@@ -21,8 +23,8 @@ nz-header {
 }
 
 nz-content {
-  padding: 0 50px;
-  margin-top: 64px;
+  padding: 0 100px;
+  /*margin-top: 64px;*/
 }
 
 nz-breadcrumb {
