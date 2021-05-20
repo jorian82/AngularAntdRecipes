@@ -144,3 +144,11 @@ The subject is only when passing messages between components, when data is passe
 # Observable vs Subject
 
 Both elements are similar but differ in a sense of that an observable is a passive listener and a subject is an active listener, ie, we have to define when to trigger the 'next' step, and such trigger can be called externally and from any component using the subject; observables on the other hand, use the next method too but it is used inside the observable definition and it can only be triggered from it like when an http request completes or any other asynch function defined/called in it.
+
+# Useful Links & Resources
+
+- [RxJS Official documentation](https://rxjs-dev.firebaseapp.com)
+- [RxJS series](https://academind.com/learn/javascript/understanding-rxjs/)
+- [Updating to RxJS](https://academind.com/learn/javascript/rxjs-6-what-changed/)
+
+
