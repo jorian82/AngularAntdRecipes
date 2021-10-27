@@ -16,21 +16,21 @@ To use this approach we need to make sure the *FormsModule* is in the imports li
 app-form.component.html.
 ```
 <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-  <input 
-      type="text" 
+  <input
+      type="text"
       name="username"
       id="username"
       class="form-control"
       ngModel
   />
-  <input 
-      type="email" 
+  <input
+      type="email"
       name="email"
       id="email"
       class="form-control"
       ngModel
   />
-  <select 
+  <select
       id="secret"
       name="secret"
       class="form-control"
@@ -108,8 +108,8 @@ HTML
 ```
 <div class="radio" *ngFor="let elem of genders">
   <label>
-    <input 
-        type="radio" 
+    <input
+        type="radio"
         name="gender"
         ngModel
         [value]="elem">
@@ -129,7 +129,7 @@ There are 2 ways to set the values on a form:
       groupField1: 'value',
       ...
       groupFieldN: 'value'
-    }, 
+    },
     ...
     fieldN: 'value'
   })
@@ -178,7 +178,22 @@ We need to define our Form variable of type FormGroup (from @angular/forms), we 
 On the init method we'll initialize the form to make sure we define the form before render the html. The elements are just key-value pairs that we define as follow:
 
 ```
+export class FormComponent implements OnInit {
+  ...
+  signUpForm: FormGroup
+  ...
+
+  ngOnInit() {
+    this.signUpForm = new FormGroup({
+      'username': new FormGroup(null),
+      'email': new FormGroup(null),
+      'gender': new FormGroup('male');
+    })
+  }
+}
 ```
+
+Still we require the html form be present in the html to link the object from the script and then add the proper validators and other functionality to the form.
 
 # Form validators
 
@@ -191,16 +206,16 @@ A good way to provide feedback about the field the user is typing is by adding e
 app-form.component.html.
 ```
 <form (ngSubmit)="onSubmit()" #f="ngForm">
-  <input 
-      type="text" 
+  <input
+      type="text"
       name="username"
       id="username"
       class="form-control"
-      ngModel 
+      ngModel
       required
   />
-  <input 
-      type="email" 
+  <input
+      type="email"
       name="email"
       id="email"
       class="form-control"
@@ -209,7 +224,7 @@ app-form.component.html.
       #email="ngModel"
   />
   <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email</span>
-  <select 
+  <select
       id="secret"
       name="secret"
       class="form-control"
@@ -223,7 +238,7 @@ app-form.component.html.
 
 ## Using default values for the form fields
 
-To do this we use one way binding on the form fields, to do this we add [] to the ngModel property and assign a predefined value to the field 
+To do this we use one way binding on the form fields, to do this we add [] to the ngModel property and assign a predefined value to the field
 
 app-form.component.ts
 ```
@@ -235,7 +250,7 @@ app-form.component.ts
 app-form.component.html
 ```
 ...
-  <select 
+  <select
       id="secret"
       name="secret"
       class="form-control"
