@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 
+import { Subject } from 'rxjs';
+
 import { Recipe } from "../models/recipe.model";
 import { Ingredient } from '../models/ingredient.model';
 
@@ -7,6 +9,8 @@ import { ShoppingListService } from '../services/shopping-list.service';
 
 @Injectable()
 export class RecipeService {
+
+  recipeSelected = new Subject<Recipe>();
 
   private recipes: Recipe[] = [
     new Recipe('202103051200', 'Tasty Schitzel', 'A super tasty Schnitzel', 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Wiener-Schnitzel02.jpg/1280px-Wiener-Schnitzel02.jpg', [
